@@ -1,0 +1,64 @@
+{
+  "name": "Sale",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string",
+      "description": "ID do cliente"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string",
+            "description": "ID do produto"
+          },
+          "quantity": {
+            "type": "number",
+            "description": "Quantidade"
+          },
+          "price": {
+            "type": "number",
+            "description": "Preço unitário"
+          }
+        }
+      }
+    },
+    "total": {
+      "type": "number",
+      "description": "Valor total"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "dinheiro",
+        "cartao_credito",
+        "cartao_debito",
+        "pix"
+      ],
+      "description": "Forma de pagamento"
+    },
+    "installments": {
+      "type": "number",
+      "description": "Número de parcelas"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "completed",
+        "cancelled"
+      ],
+      "default": "pending",
+      "description": "Status da venda"
+    }
+  },
+  "required": [
+    "client_id",
+    "items",
+    "total",
+    "payment_method"
+  ]
+}

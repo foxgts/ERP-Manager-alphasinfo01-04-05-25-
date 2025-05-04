@@ -1,0 +1,119 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "receita",
+        "despesa"
+      ],
+      "description": "Tipo de transação"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Valor"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Data"
+    },
+    "category": {
+      "type": "string",
+      "description": "Categoria"
+    },
+    "subcategory": {
+      "type": "string",
+      "description": "Subcategoria"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendente",
+        "pago",
+        "cancelado"
+      ],
+      "default": "pendente",
+      "description": "Status"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Data de vencimento"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "dinheiro",
+        "cartao_credito",
+        "cartao_debito",
+        "pix",
+        "boleto",
+        "transferencia",
+        "cheque",
+        "emprestimo"
+      ],
+      "description": "Forma de pagamento"
+    },
+    "installments": {
+      "type": "number",
+      "description": "Número de parcelas"
+    },
+    "reference_id": {
+      "type": "string",
+      "description": "ID de referência (venda, serviço, etc.)"
+    },
+    "reference_type": {
+      "type": "string",
+      "enum": [
+        "sale",
+        "service",
+        "expense",
+        "other"
+      ],
+      "description": "Tipo de referência"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Observações"
+    },
+    "recurrence": {
+      "type": "object",
+      "description": "Configuração de recorrência",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "none",
+            "daily",
+            "weekly",
+            "monthly",
+            "yearly"
+          ],
+          "default": "none",
+          "description": "Tipo de recorrência"
+        },
+        "interval": {
+          "type": "number",
+          "description": "Intervalo de recorrência"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Data final da recorrência"
+        }
+      }
+    }
+  },
+  "required": [
+    "type",
+    "description",
+    "amount",
+    "date"
+  ]
+}

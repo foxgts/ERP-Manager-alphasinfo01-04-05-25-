@@ -1,0 +1,112 @@
+{
+  "name": "ServiceOrder",
+  "type": "object",
+  "properties": {
+    "number": {
+      "type": "string",
+      "description": "Número da ordem de serviço"
+    },
+    "client_id": {
+      "type": "string",
+      "description": "ID do cliente"
+    },
+    "service_type_id": {
+      "type": "string",
+      "description": "ID do tipo de serviço"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição do serviço a ser realizado"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "in_progress",
+        "completed",
+        "cancelled"
+      ],
+      "default": "pending",
+      "description": "Status da ordem de serviço"
+    },
+    "scheduled_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Data agendada"
+    },
+    "completion_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Data de conclusão"
+    },
+    "price": {
+      "type": "number",
+      "description": "Valor do serviço"
+    },
+    "client_item": {
+      "type": "object",
+      "description": "Item do cliente para o serviço",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Tipo do item (ex: notebook, celular, etc.)"
+        },
+        "brand": {
+          "type": "string",
+          "description": "Marca"
+        },
+        "model": {
+          "type": "string",
+          "description": "Modelo"
+        },
+        "serial_number": {
+          "type": "string",
+          "description": "Número de série"
+        },
+        "condition": {
+          "type": "string",
+          "description": "Condição de entrada"
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "description": "Produtos utilizados no serviço",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string",
+            "description": "ID do produto"
+          },
+          "quantity": {
+            "type": "number",
+            "description": "Quantidade"
+          },
+          "price": {
+            "type": "number",
+            "description": "Preço unitário"
+          }
+        }
+      }
+    },
+    "technician_notes": {
+      "type": "string",
+      "description": "Anotações do técnico"
+    },
+    "client_signature": {
+      "type": "string",
+      "description": "URL da assinatura do cliente"
+    },
+    "pdf_url": {
+      "type": "string",
+      "description": "URL do PDF da ordem de serviço"
+    }
+  },
+  "required": [
+    "client_id",
+    "service_type_id",
+    "description",
+    "status"
+  ]
+}

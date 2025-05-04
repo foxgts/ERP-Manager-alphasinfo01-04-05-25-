@@ -1,0 +1,66 @@
+{
+  "name": "ServiceType",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do serviço"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição detalhada"
+    },
+    "base_price": {
+      "type": "number",
+      "description": "Preço base do serviço"
+    },
+    "duration_minutes": {
+      "type": "number",
+      "description": "Duração estimada em minutos"
+    },
+    "category": {
+      "type": "string",
+      "description": "Categoria do serviço"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Indica se o serviço está ativo"
+    },
+    "unit": {
+      "type": "string",
+      "enum": [
+        "hora",
+        "diária",
+        "pacote",
+        "unidade"
+      ],
+      "default": "unidade",
+      "description": "Unidade de medida do serviço"
+    },
+    "weight": {
+      "type": "number",
+      "description": "Peso relacionado ao serviço (em kg)"
+    },
+    "volume": {
+      "type": "number",
+      "description": "Volume relacionado ao serviço (em m³)"
+    },
+    "length": {
+      "type": "number",
+      "description": "Comprimento relacionado ao serviço (em cm)"
+    },
+    "width": {
+      "type": "number",
+      "description": "Largura relacionada ao serviço (em cm)"
+    },
+    "height": {
+      "type": "number",
+      "description": "Altura relacionada ao serviço (em cm)"
+    }
+  },
+  "required": [
+    "name",
+    "base_price"
+  ]
+}

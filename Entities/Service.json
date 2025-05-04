@@ -1,0 +1,44 @@
+{
+  "name": "Service",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string",
+      "description": "ID do cliente"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição do serviço"
+    },
+    "scheduled_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Data agendada"
+    },
+    "price": {
+      "type": "number",
+      "description": "Valor do serviço"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "agendado",
+        "em_andamento",
+        "concluido",
+        "cancelado"
+      ],
+      "default": "agendado",
+      "description": "Status do serviço"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Observações"
+    }
+  },
+  "required": [
+    "client_id",
+    "description",
+    "scheduled_date",
+    "price"
+  ]
+}

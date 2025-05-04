@@ -1,0 +1,45 @@
+{
+  "name": "Client",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do cliente"
+    },
+    "document": {
+      "type": "string",
+      "description": "CPF/CNPJ"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email do cliente"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Telefone"
+    },
+    "address": {
+      "type": "string",
+      "description": "Endereço completo"
+    },
+    "birth_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Data de nascimento"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "pessoa_fisica",
+        "pessoa_juridica"
+      ],
+      "description": "Tipo de cliente"
+    }
+  },
+  "required": [
+    "name",
+    "document",
+    "type"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do produto"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição do produto"
+    },
+    "price": {
+      "type": "number",
+      "description": "Preço de venda"
+    },
+    "cost": {
+      "type": "number",
+      "description": "Custo do produto"
+    },
+    "stock": {
+      "type": "number",
+      "description": "Quantidade em estoque"
+    },
+    "category": {
+      "type": "string",
+      "description": "Categoria do produto"
+    },
+    "sku": {
+      "type": "string",
+      "description": "Código do produto"
+    },
+    "barcode": {
+      "type": "string",
+      "description": "Código de barras"
+    },
+    "weight": {
+      "type": "number",
+      "description": "Peso do produto (em kg)"
+    },
+    "volume": {
+      "type": "number",
+      "description": "Volume do produto (em m³)"
+    },
+    "length": {
+      "type": "number",
+      "description": "Comprimento do produto (em cm)"
+    },
+    "width": {
+      "type": "number",
+      "description": "Largura do produto (em cm)"
+    },
+    "height": {
+      "type": "number",
+      "description": "Altura do produto (em cm)"
+    },
+    "unit": {
+      "type": "string",
+      "enum": [
+        "unidade",
+        "kg",
+        "litro",
+        "metro",
+        "caixa",
+        "par"
+      ],
+      "default": "unidade",
+      "description": "Unidade de medida"
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "stock",
+    "sku"
+  ]
+}
